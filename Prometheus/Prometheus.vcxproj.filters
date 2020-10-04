@@ -37,6 +37,12 @@
     <ClInclude Include="src\Prometheus\Events\MouseEvent.h">
       <Filter>Prometheus\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Prometheus\Layer.h">
+      <Filter>Prometheus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\LayerStack.h">
+      <Filter>Prometheus</Filter>
+    </ClInclude>
     <ClInclude Include="src\Prometheus\Log.h">
       <Filter>Prometheus</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Prometheus\Application.cpp">
+      <Filter>Prometheus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Prometheus\Layer.cpp">
+      <Filter>Prometheus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Prometheus\LayerStack.cpp">
       <Filter>Prometheus</Filter>
     </ClCompile>
     <ClCompile Include="src\Prometheus\Log.cpp">

@@ -1,9 +1,12 @@
 #pragma once
 
 #include "Core.h"
+
+#include "Window.h"
+#include "LayerStack.h"
 #include "Events/Event.h"
 #include "Prometheus/Events/ApplicationEvent.h"
-#include "Window.h"
+
 
 namespace Prometheus {
 
@@ -14,6 +17,9 @@ namespace Prometheus {
 		virtual ~Application();
 		
 		void Run();
+
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* overlay);
 		
 		void OnEvent(Event& e);
 	private:
@@ -21,6 +27,7 @@ namespace Prometheus {
 
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
+		LayerStack m_LayerStack;
 	};
 	
 	// To be defined in CLIENT
