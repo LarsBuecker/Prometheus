@@ -1,2 +1,6 @@
-﻿  Application.cpp
+﻿  Log.cpp
+C:\dev\Prometheus\Prometheus\src\Prometheus\Log.h(17,54): warning C4251: "Prometheus::Log::s_CoreLogger": class "std::shared_ptr<spdlog::logger>" erfordert eine DLL-Schnittstelle, die von Clients von class "Prometheus::Log" verwendet wird
+C:\dev\Prometheus\Prometheus\vendor\spdlog\include\spdlog\details\registry.h(34): message : Siehe Deklaration von "std::shared_ptr<spdlog::logger>"
+C:\dev\Prometheus\Prometheus\src\Prometheus\Log.h(18,56): warning C4251: "Prometheus::Log::s_ClientLogger": class "std::shared_ptr<spdlog::logger>" erfordert eine DLL-Schnittstelle, die von Clients von class "Prometheus::Log" verwendet wird
+C:\dev\Prometheus\Prometheus\vendor\spdlog\include\spdlog\details\registry.h(34): message : Siehe Deklaration von "std::shared_ptr<spdlog::logger>"
   Prometheus.vcxproj -> C:\dev\Prometheus\\bin\Debug-x64\Prometheus\Prometheus.dll

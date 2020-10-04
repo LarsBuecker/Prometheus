@@ -1,0 +1,3 @@
+[submodule "Prometheus/vendor/spdlog"]
+	path = Prometheus/vendor/spdlog
+	url = https://github.com/gabime/spdlog
