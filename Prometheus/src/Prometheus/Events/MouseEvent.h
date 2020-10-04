@@ -48,7 +48,7 @@ namespace Prometheus {
 		float m_XOffset, m_YOffset;
 	};
 
-	class HAZEL_API MouseButtonEvent : public Event
+	class PROMETHEUS_API MouseButtonEvent : public Event
 	{
 	public:
 		inline int GetMouseButton() const { return m_Button; }
