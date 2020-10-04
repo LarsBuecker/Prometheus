@@ -12,6 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Prometheus/Log.h"
+
 #ifdef PM_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif // PM_PLATFORM_WINDOWS

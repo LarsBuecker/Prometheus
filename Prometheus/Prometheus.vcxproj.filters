@@ -7,6 +7,12 @@
     <Filter Include="Prometheus\Events">
       <UniqueIdentifier>{15E5CF3F-81FB-CDD5-CA72-59F736C89E5D}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Prometheus\Platform">
+      <UniqueIdentifier>{C5857B8F-31E7-589D-BA54-9F4F26B58F5C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Prometheus\Platform\Windows">
+      <UniqueIdentifier>{FF2401AB-6B32-2F91-F418-2B7C6025FB47}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Prometheus.h" />
@@ -34,6 +40,12 @@
     <ClInclude Include="src\Prometheus\Log.h">
       <Filter>Prometheus</Filter>
     </ClInclude>
+    <ClInclude Include="src\Prometheus\Platform\Windows\WindowsWindow.h">
+      <Filter>Prometheus\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\Window.h">
+      <Filter>Prometheus</Filter>
+    </ClInclude>
     <ClInclude Include="src\pmpch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -42,6 +54,9 @@
     </ClCompile>
     <ClCompile Include="src\Prometheus\Log.cpp">
       <Filter>Prometheus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Prometheus\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Prometheus\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\pmpch.cpp" />
   </ItemGroup>

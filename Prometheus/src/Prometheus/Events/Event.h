@@ -1,4 +1,5 @@
 #pragma once
+#include "pmpch.h"
 
 #include "Prometheus/Core.h"
 

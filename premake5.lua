@@ -10,6 +10,12 @@ workspace "Prometheus"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Prometheus/vendor/GLFW/include"
+
+include "Prometheus/vendor/GLFW"
+
 project "Prometheus"
 	location "Prometheus"
 	kind "SharedLib"
@@ -30,7 +36,14 @@ project "Prometheus"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -50,7 +63,7 @@ project "Prometheus"
 		}
 
 	filter "configurations:Debug"
-		defines "PM_DEBUG"
+		defines {"PM_DEBUG", "PM_ENABLE_ASSERTS"}
 		symbols "On"
 
 	filter "configurations:Release"
