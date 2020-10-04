@@ -4,6 +4,9 @@
     <Filter Include="Prometheus">
       <UniqueIdentifier>{519E8383-3D56-C5D0-A65D-9E2C923460C1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Prometheus\Events">
+      <UniqueIdentifier>{15E5CF3F-81FB-CDD5-CA72-59F736C89E5D}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Prometheus.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Prometheus\EntryPoint.h">
       <Filter>Prometheus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\Events\ApplicationEvent.h">
+      <Filter>Prometheus\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\Events\Event.h">
+      <Filter>Prometheus\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\Events\KeyEvent.h">
+      <Filter>Prometheus\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\Events\MouseEvent.h">
+      <Filter>Prometheus\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Prometheus\Log.h">
       <Filter>Prometheus</Filter>

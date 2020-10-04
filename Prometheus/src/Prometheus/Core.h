@@ -9,3 +9,5 @@
 #else
 	#error Prometheus only supports Windows!
 #endif // PM_PLATFORM_WINDOWS
+
+#define BIT(x) (1 << x)
