@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Prometheus {
 	class PROMETHEUS_API KeyEvent : public Evnet {
 	public:

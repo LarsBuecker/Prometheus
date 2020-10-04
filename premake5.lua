@@ -18,6 +18,9 @@ project "Prometheus"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "pmpch.h"
+	pchsource "Prometheus/src/pmpch.cpp"
+
 	files 
 	{
 		"%{prj.name}/src/**.h",
