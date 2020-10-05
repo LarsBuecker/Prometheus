@@ -9,12 +9,12 @@ public:
 
 	void OnUpdate() override
 	{
-		PM_INFO("ExampleLayer::Update");
+		//PM_INFO("ExampleLayer::Update");
 	}
 
 	void OnEvent(Prometheus::Event& event) override
 	{
-		PM_TRACE("{0}", event);
+		//PM_TRACE("{0}", event);
 	}
 };
 
@@ -22,7 +22,6 @@ class Sandbox : public Prometheus::Application {
 public:
 	Sandbox() {
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Prometheus::ImGuiLayer());
 	}
 
 	~Sandbox() {

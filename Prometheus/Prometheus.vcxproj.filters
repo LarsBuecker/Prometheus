@@ -13,9 +13,6 @@
     <Filter Include="Prometheus\Platform">
       <UniqueIdentifier>{C5857B8F-31E7-589D-BA54-9F4F26B58F5C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Prometheus\Platform\OpenGL">
-      <UniqueIdentifier>{595FB9DB-456F-65AC-AE28-CACA9A575445}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Prometheus\Platform\Windows">
       <UniqueIdentifier>{FF2401AB-6B32-2F91-F418-2B7C6025FB47}</UniqueIdentifier>
     </Filter>
@@ -64,9 +61,6 @@
     <ClInclude Include="src\Prometheus\MouseButtonCodes.h">
       <Filter>Prometheus</Filter>
     </ClInclude>
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>Prometheus\Platform\OpenGL</Filter>
-    </ClInclude>
     <ClInclude Include="src\Prometheus\Platform\Windows\WindowsInput.h">
       <Filter>Prometheus\Platform\Windows</Filter>
     </ClInclude>
@@ -82,6 +76,9 @@
     <ClCompile Include="src\Prometheus\Application.cpp">
       <Filter>Prometheus</Filter>
     </ClCompile>
+    <ClCompile Include="src\Prometheus\ImGui\ImGuiBuild.cpp">
+      <Filter>Prometheus\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\Prometheus\ImGui\ImGuiLayer.cpp">
       <Filter>Prometheus\ImGui</Filter>
     </ClCompile>
@@ -93,9 +90,6 @@
     </ClCompile>
     <ClCompile Include="src\Prometheus\Log.cpp">
       <Filter>Prometheus</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>Prometheus\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Prometheus\Platform\Windows\WindowsInput.cpp">
       <Filter>Prometheus\Platform\Windows</Filter>

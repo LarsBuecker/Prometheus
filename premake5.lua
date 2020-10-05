@@ -110,6 +110,7 @@ project "Sandbox"
 	{
 		"Prometheus/vendor/spdlog/include",
 		"Prometheus/src",
+		"Prometheus/vendor",
 		"%{IncludeDir.ImGui}"
 	}
 
