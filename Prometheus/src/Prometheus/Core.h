@@ -1,11 +1,15 @@
 #pragma once
 
 #ifdef PM_PLATFORM_WINDOWS
-	#ifdef PM_BUILD_DLL
-		#define PROMETHEUS_API __declspec(dllexport)
+	#ifdef PM_DYNAMIC_LINK
+		#ifdef PM_BUILD_DLL
+			#define PROMETHEUS_API __declspec(dllexport)
+		#else
+			#define PROMETHEUS_API __declspec(dllimport)
+		#endif // PM_BUILD_DLL
 	#else
-		#define PROMETHEUS_API __declspec(dllimport)
-	#endif // PM_BUILD_DLL
+		#define PROMETHEUS_API
+	#endif
 #else
 	#error Prometheus only supports Windows!
 #endif // PM_PLATFORM_WINDOWS
