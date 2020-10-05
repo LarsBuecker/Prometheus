@@ -14,9 +14,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Prometheus/vendor/GLFW/include"
 IncludeDir["Glad"] = "Prometheus/vendor/Glad/include"
+IncludeDir["ImGui"] = "Prometheus/vendor/imgui"
 
 include "Prometheus/vendor/GLFW"
 include "Prometheus/vendor/Glad"
+include "Prometheus/vendor/imgui"
 
 
 project "Prometheus"
@@ -41,13 +43,15 @@ project "Prometheus"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
 		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 

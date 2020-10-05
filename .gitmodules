@@ -4,3 +4,6 @@
 [submodule "Prometheus/vendor/GLFW"]
 	path = Prometheus/vendor/GLFW
 	url = https://github.com/TheCherno/GLFW
+[submodule "Prometheus/vendor/imgui"]
+	path = Prometheus/vendor/imgui
+	url = https://github.com/TheCherno/imgui
