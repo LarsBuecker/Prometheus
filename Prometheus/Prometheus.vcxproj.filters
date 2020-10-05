@@ -71,6 +71,8 @@
       <Filter>Prometheus</Filter>
     </ClInclude>
     <ClInclude Include="src\pmpch.h" />
+    <ClInclude Include="src\Prometheus\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Prometheus\Application.cpp">
@@ -98,5 +100,6 @@
       <Filter>Prometheus\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\pmpch.cpp" />
+    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLContext.cpp" />
   </ItemGroup>
 </Project>

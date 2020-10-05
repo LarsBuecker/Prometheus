@@ -1,8 +1,10 @@
 #pragma once
 
 #include "Prometheus/Window.h"
+#include "Prometheus/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>
+
 
 namespace Prometheus {
 	
@@ -28,6 +30,7 @@ namespace Prometheus {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData {
 			std::string Title;
