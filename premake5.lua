@@ -1,6 +1,8 @@
 workspace "Prometheus"
 	architecture "x64"
 
+	startproject "Sandbox"
+
 	configurations
 	{
 		"Debug",
@@ -15,16 +17,17 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Prometheus/vendor/GLFW/include"
 IncludeDir["Glad"] = "Prometheus/vendor/Glad/include"
 IncludeDir["ImGui"] = "Prometheus/vendor/imgui"
+IncludeDir["glm"] = "Prometheus/vendor/glm"
 
 include "Prometheus/vendor/GLFW"
 include "Prometheus/vendor/Glad"
 include "Prometheus/vendor/imgui"
 
-
 project "Prometheus"
 	location "Prometheus"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -44,7 +47,8 @@ project "Prometheus"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -57,7 +61,6 @@ project "Prometheus"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines 
@@ -74,17 +77,17 @@ project "Prometheus"
 
 	filter "configurations:Debug"
 		defines {"PM_DEBUG", "PM_ENABLE_ASSERTS"}
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "PM_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "PM_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 
@@ -92,6 +95,7 @@ project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -105,7 +109,8 @@ project "Sandbox"
 	includedirs
 	{
 		"Prometheus/vendor/spdlog/include",
-		"Prometheus/src"
+		"Prometheus/src",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
@@ -115,7 +120,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines 
@@ -125,15 +129,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "PM_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "PM_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "PM_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
