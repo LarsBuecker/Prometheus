@@ -13,8 +13,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Prometheus/vendor/GLFW/include"
+IncludeDir["Glad"] = "Prometheus/vendor/Glad/include"
 
 include "Prometheus/vendor/GLFW"
+include "Prometheus/vendor/Glad"
+
 
 project "Prometheus"
 	location "Prometheus"
@@ -37,12 +40,14 @@ project "Prometheus"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -55,6 +60,7 @@ project "Prometheus"
 		{
 			"PM_PLATFORM_WINDOWS",
 			"PM_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
