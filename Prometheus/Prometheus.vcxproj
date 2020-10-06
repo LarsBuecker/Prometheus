@@ -159,6 +159,7 @@
     <ClInclude Include="src\Prometheus\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Prometheus\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Prometheus\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Prometheus\Renderer\Shader.h" />
     <ClInclude Include="src\Prometheus\Window.h" />
     <ClInclude Include="src\pmpch.h" />
   </ItemGroup>
@@ -172,6 +173,7 @@
     <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Prometheus\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Prometheus\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="src\Prometheus\Renderer\Shader.cpp" />
     <ClCompile Include="src\pmpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
@@ -190,4 +192,4 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-</Project> 
+</Project>

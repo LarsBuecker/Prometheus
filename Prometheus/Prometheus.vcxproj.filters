@@ -79,6 +79,9 @@
     <ClInclude Include="src\Prometheus\Renderer\GraphicsContext.h">
       <Filter>Prometheus\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Prometheus\Renderer\Shader.h">
+      <Filter>Prometheus\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Prometheus\Window.h">
       <Filter>Prometheus</Filter>
     </ClInclude>
@@ -111,6 +114,9 @@
     </ClCompile>
     <ClCompile Include="src\Prometheus\Platform\Windows\WindowsWindow.cpp">
       <Filter>Prometheus\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Prometheus\Renderer\Shader.cpp">
+      <Filter>Prometheus\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\pmpch.cpp" />
   </ItemGroup>
