@@ -140,6 +140,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Prometheus.h" />
     <ClInclude Include="src\Prometheus\Application.h" />
     <ClInclude Include="src\Prometheus\Core.h" />
@@ -163,10 +164,12 @@
     <ClInclude Include="src\Prometheus\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Prometheus\Renderer\Renderer.h" />
     <ClInclude Include="src\Prometheus\Renderer\Shader.h" />
+    <ClInclude Include="src\Prometheus\Renderer\VertexArray.h" />
     <ClInclude Include="src\Prometheus\Window.h" />
     <ClInclude Include="src\pmpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Prometheus\Application.cpp" />
     <ClCompile Include="src\Prometheus\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Prometheus\ImGui\ImGuiLayer.cpp" />
@@ -183,6 +186,7 @@
     <ClCompile Include="src\pmpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Prometheus\Renderer\VertexArray.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
