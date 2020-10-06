@@ -155,10 +155,13 @@
     <ClInclude Include="src\Prometheus\LayerStack.h" />
     <ClInclude Include="src\Prometheus\Log.h" />
     <ClInclude Include="src\Prometheus\MouseButtonCodes.h" />
+    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Prometheus\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Prometheus\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\Prometheus\Renderer\Buffer.h" />
     <ClInclude Include="src\Prometheus\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Prometheus\Renderer\Renderer.h" />
     <ClInclude Include="src\Prometheus\Renderer\Shader.h" />
     <ClInclude Include="src\Prometheus\Window.h" />
     <ClInclude Include="src\pmpch.h" />
@@ -170,9 +173,12 @@
     <ClCompile Include="src\Prometheus\Layer.cpp" />
     <ClCompile Include="src\Prometheus\LayerStack.cpp" />
     <ClCompile Include="src\Prometheus\Log.cpp" />
+    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Prometheus\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Prometheus\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="src\Prometheus\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Prometheus\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Prometheus\Renderer\Shader.cpp" />
     <ClCompile Include="src\pmpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
