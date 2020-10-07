@@ -91,6 +91,9 @@
     <ClInclude Include="src\Prometheus\Renderer\Renderer.h" />
     <ClInclude Include="src\Prometheus\Renderer\VertexArray.h" />
     <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="src\Prometheus\Renderer\RendererAPI.h" />
+    <ClInclude Include="src\Prometheus\Renderer\RenderCommand.h" />
+    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLRendererAPI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Prometheus\Application.cpp">
@@ -129,5 +132,8 @@
     <ClCompile Include="src\Prometheus\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Prometheus\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="src\Prometheus\Renderer\RendererAPI.cpp" />
+    <ClCompile Include="src\Prometheus\Renderer\RenderCommand.cpp" />
+    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLRendererAPI.cpp" />
   </ItemGroup>
 </Project>
