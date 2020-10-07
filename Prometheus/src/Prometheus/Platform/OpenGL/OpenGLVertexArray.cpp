@@ -70,5 +70,4 @@ namespace Prometheus {
 
 		m_IndexBuffer = indexBuffer;
 	}
-
 }

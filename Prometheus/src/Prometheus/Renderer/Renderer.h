@@ -1,19 +1,29 @@
 #pragma once
 
-namespace Prometheus {
+#include "RenderCommand.h"
+#include "OrthographicCamera.h"
 
-	enum class RendererAPI
-	{
-		None = 0, OpenGL = 1
-	};
+#include "Shader.h"
+
+namespace Prometheus {
 
 	class Renderer
 	{
 	public:
-		inline static RendererAPI GetAPI() { return s_RendererAPI; }
-		//inline static void SetAPI(RendererAPI api) { s_RendererAPI = api; }
+		static void BeginScene(OrthograhicCamera& camera);
+		static void EndScene();
+		
+		static void Submit(const std::shared_ptr<Shader>& shader, const std::shared_ptr<VertexArray>& vertexArray);
+
+		inline static RendererAPI::API GetAPI() { return RendererAPI::GetAPI(); }
+
 	private:
-		static RendererAPI s_RendererAPI;
+		struct SceneData
+		{
+			glm::mat4 ViewProjectionMatrix;
+		};
+
+		static SceneData* m_SceneData;
 	};
 	
 }

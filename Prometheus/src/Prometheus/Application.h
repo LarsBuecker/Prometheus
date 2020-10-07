@@ -13,6 +13,8 @@
 #include "Prometheus/Renderer/Buffer.h"
 #include "Prometheus/Renderer/VertexArray.h"
 
+#include "Prometheus/Renderer/OrthographicCamera.h"
+
 namespace Prometheus {
 
 	class PROMETHEUS_API Application
@@ -37,11 +39,6 @@ namespace Prometheus {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-		std::shared_ptr<VertexBuffer> m_VertexBuffer;
-		std::shared_ptr<IndexBuffer> m_IndexBuffer;
 	private:
 		static Application* s_Instance;
 	};
