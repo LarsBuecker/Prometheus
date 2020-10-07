@@ -10,3 +10,4 @@ You can clone the repository to a local destination using git:
 
 Make sure that you do a `--recursive` clone to fetch all of the submodules!
 
+Run `generateProjects.bat` to create Visual Studio 2019 Projects.
