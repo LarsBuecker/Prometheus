@@ -19,9 +19,12 @@ IncludeDir["Glad"] = "Prometheus/vendor/Glad/include"
 IncludeDir["ImGui"] = "Prometheus/vendor/imgui"
 IncludeDir["glm"] = "Prometheus/vendor/glm"
 
-include "Prometheus/vendor/GLFW"
-include "Prometheus/vendor/Glad"
-include "Prometheus/vendor/imgui"
+group "Dependencies"
+	include "Prometheus/vendor/GLFW"
+	include "Prometheus/vendor/Glad"
+	include "Prometheus/vendor/imgui"
+
+group ""
 
 project "Prometheus"
 	location "Prometheus"
@@ -39,7 +42,9 @@ project "Prometheus"
 	files 
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
 	defines
@@ -112,7 +117,8 @@ project "Sandbox"
 		"Prometheus/vendor/spdlog/include",
 		"Prometheus/src",
 		"Prometheus/vendor",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links

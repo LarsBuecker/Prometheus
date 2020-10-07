@@ -13,6 +13,8 @@
 #include "Prometheus/Renderer/Buffer.h"
 #include "Prometheus/Renderer/VertexArray.h"
 
+#include "Prometheus/Renderer/OrthographicCamera.h"
+
 namespace Prometheus {
 
 	class PROMETHEUS_API Application
@@ -42,6 +44,8 @@ namespace Prometheus {
 		std::shared_ptr<VertexArray> m_VertexArray;
 		std::shared_ptr<VertexBuffer> m_VertexBuffer;
 		std::shared_ptr<IndexBuffer> m_IndexBuffer;
+
+		OrthograhicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};
