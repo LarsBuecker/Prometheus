@@ -1366,6 +1366,7 @@
     <ClInclude Include="src\Prometheus\Core\Window.h">
       <Filter>src\Prometheus</Filter>
     </ClInclude>
+    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLShader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Prometheus\ImGui\ImGuiBuild.cpp">
@@ -1428,5 +1429,6 @@
     <ClCompile Include="src\Prometheus\Core\Log.cpp">
       <Filter>src\Prometheus</Filter>
     </ClCompile>
+    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLShader.cpp" />
   </ItemGroup>
 </Project>
