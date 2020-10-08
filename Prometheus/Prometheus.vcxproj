@@ -143,6 +143,7 @@
     <ClInclude Include="src\Prometheus.h" />
     <ClInclude Include="src\Prometheus\Application.h" />
     <ClInclude Include="src\Prometheus\Core.h" />
+    <ClInclude Include="src\Prometheus\Core\Timestep.h" />
     <ClInclude Include="src\Prometheus\EntryPoint.h" />
     <ClInclude Include="src\Prometheus\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Prometheus\Events\Event.h" />

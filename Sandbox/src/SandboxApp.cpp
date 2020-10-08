@@ -106,19 +106,19 @@ public:
 		m_BlueShader.reset(new Prometheus::Shader(blueShaderVertexSrc, blueShaderFragmentSrc));
 	}
 
-	void OnUpdate() override
+	void OnUpdate(Prometheus::Timestep ts) override
 	{
 		if (Prometheus::Input::IsKeyPressed(PM_KEY_LEFT))
-			m_CameraPostion.x -= m_CameraSpeed;
+			m_CameraPostion.x -= m_CameraSpeed * ts;
 
 		if (Prometheus::Input::IsKeyPressed(PM_KEY_RIGHT))
-			m_CameraPostion.x += m_CameraSpeed;
+			m_CameraPostion.x += m_CameraSpeed * ts;
 
 		if (Prometheus::Input::IsKeyPressed(PM_KEY_DOWN))
-			m_CameraPostion.y -= m_CameraSpeed;
+			m_CameraPostion.y -= m_CameraSpeed * ts;
 
 		if (Prometheus::Input::IsKeyPressed(PM_KEY_UP))
-			m_CameraPostion.y += m_CameraSpeed;
+			m_CameraPostion.y += m_CameraSpeed * ts;
 
 		Prometheus::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		Prometheus::RenderCommand::Clear();
@@ -148,7 +148,7 @@ private:
 
 	Prometheus::OrthograhicCamera m_Camera;
 	glm::vec3 m_CameraPostion;
-	float m_CameraSpeed = 0.1f;
+	float m_CameraSpeed = 0.3f;
 };
 
 class Sandbox : public Prometheus::Application {

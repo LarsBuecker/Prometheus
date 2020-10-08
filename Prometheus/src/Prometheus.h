@@ -6,6 +6,8 @@
 #include "Prometheus/Layer.h"
 #include "Prometheus/Log.h"
 
+#include "Prometheus/Core/Timestep.h"
+
 #include "Prometheus/Input.h"
 #include "Prometheus/MouseButtonCodes.h"
 #include "Prometheus/KeyCodes.h"
