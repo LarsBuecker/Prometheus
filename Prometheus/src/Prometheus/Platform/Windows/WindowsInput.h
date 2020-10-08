@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Prometheus/Input.h"
+#include "Prometheus/Core/Input.h"
 
 namespace Prometheus {
 

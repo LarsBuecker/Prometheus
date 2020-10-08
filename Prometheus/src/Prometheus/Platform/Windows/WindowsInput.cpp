@@ -1,7 +1,7 @@
 #include "pmpch.h"
 #include "WindowsInput.h"
 
-#include "Prometheus/Application.h"
+#include "Prometheus/Core/Application.h"
 #include <GLFW/glfw3.h>
 
 

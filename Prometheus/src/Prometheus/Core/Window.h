@@ -2,8 +2,8 @@
 
 #include "pmpch.h"
 
-#include "Prometheus/Core.h"
-#include "Events/Event.h"
+#include "Prometheus/Core/Core.h"
+#include "Prometheus/Events/Event.h"
 
 namespace Prometheus {
 

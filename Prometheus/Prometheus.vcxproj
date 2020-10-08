@@ -141,21 +141,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Prometheus.h" />
-    <ClInclude Include="src\Prometheus\Application.h" />
-    <ClInclude Include="src\Prometheus\Core.h" />
+    <ClInclude Include="src\Prometheus\Core\Application.h" />
+    <ClInclude Include="src\Prometheus\Core\Core.h" />
     <ClInclude Include="src\Prometheus\Core\Timestep.h" />
-    <ClInclude Include="src\Prometheus\EntryPoint.h" />
+    <ClInclude Include="src\Prometheus\Core\EntryPoint.h" />
     <ClInclude Include="src\Prometheus\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Prometheus\Events\Event.h" />
     <ClInclude Include="src\Prometheus\Events\KeyEvent.h" />
     <ClInclude Include="src\Prometheus\Events\MouseEvent.h" />
     <ClInclude Include="src\Prometheus\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Prometheus\Input.h" />
-    <ClInclude Include="src\Prometheus\KeyCodes.h" />
-    <ClInclude Include="src\Prometheus\Layer.h" />
-    <ClInclude Include="src\Prometheus\LayerStack.h" />
-    <ClInclude Include="src\Prometheus\Log.h" />
-    <ClInclude Include="src\Prometheus\MouseButtonCodes.h" />
+    <ClInclude Include="src\Prometheus\Core\Input.h" />
+    <ClInclude Include="src\Prometheus\Core\KeyCodes.h" />
+    <ClInclude Include="src\Prometheus\Core\Layer.h" />
+    <ClInclude Include="src\Prometheus\Core\LayerStack.h" />
+    <ClInclude Include="src\Prometheus\Core\Log.h" />
+    <ClInclude Include="src\Prometheus\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLRendererAPI.h" />
@@ -170,7 +170,7 @@
     <ClInclude Include="src\Prometheus\Renderer\RendererAPI.h" />
     <ClInclude Include="src\Prometheus\Renderer\Shader.h" />
     <ClInclude Include="src\Prometheus\Renderer\VertexArray.h" />
-    <ClInclude Include="src\Prometheus\Window.h" />
+    <ClInclude Include="src\Prometheus\Core\Window.h" />
     <ClInclude Include="src\pmpch.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_features.hpp" />
@@ -582,12 +582,12 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Prometheus\Application.cpp" />
+    <ClCompile Include="src\Prometheus\Core\Application.cpp" />
     <ClCompile Include="src\Prometheus\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Prometheus\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\Prometheus\Layer.cpp" />
-    <ClCompile Include="src\Prometheus\LayerStack.cpp" />
-    <ClCompile Include="src\Prometheus\Log.cpp" />
+    <ClCompile Include="src\Prometheus\Core\Layer.cpp" />
+    <ClCompile Include="src\Prometheus\Core\LayerStack.cpp" />
+    <ClCompile Include="src\Prometheus\Core\Log.cpp" />
     <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLRendererAPI.cpp" />

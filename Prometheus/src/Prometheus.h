@@ -2,15 +2,15 @@
 
 // For use by Prometheus applications
 
-#include "Prometheus/Application.h"
-#include "Prometheus/Layer.h"
-#include "Prometheus/Log.h"
+#include "Prometheus/Core/Application.h"
+#include "Prometheus/Core/Layer.h"
+#include "Prometheus/Core/Log.h"
 
 #include "Prometheus/Core/Timestep.h"
 
-#include "Prometheus/Input.h"
-#include "Prometheus/MouseButtonCodes.h"
-#include "Prometheus/KeyCodes.h"
+#include "Prometheus/Core/Input.h"
+#include "Prometheus/Core/MouseButtonCodes.h"
+#include "Prometheus/Core/KeyCodes.h"
 
 #include "Prometheus/ImGui/ImGuiLayer.h"
 
@@ -26,5 +26,5 @@
 // ---------------------------------------------
 
 // --- Entry Point -----------------------------
-#include "Prometheus/EntryPoint.h"
+#include "Prometheus/Core/EntryPoint.h"
 // ---------------------------------------------

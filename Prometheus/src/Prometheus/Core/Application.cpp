@@ -1,7 +1,7 @@
 #include "pmpch.h"
 #include "Application.h"
 
-#include "Events/ApplicationEvent.h"
+#include "Prometheus/Events/ApplicationEvent.h"
 
 #include "Prometheus/Renderer/Renderer.h"
 

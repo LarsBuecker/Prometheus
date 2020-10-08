@@ -1,7 +1,7 @@
 #pragma once
 #include "pmpch.h"
 
-#include "Prometheus/Core.h"
+#include "Prometheus/Core/Core.h"
 
 
 namespace Prometheus {
