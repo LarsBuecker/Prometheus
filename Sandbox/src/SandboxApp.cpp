@@ -53,14 +53,18 @@ public:
 			
 			layout(location = 0) in vec3 a_Position;
 			layout(location = 1) in vec4 a_Color;
+
 			uniform mat4 u_ViewProjection;
+			uniform mat4 u_Transform;
+
 			out vec3 v_Position;
 			out vec4 v_Color;
+
 			void main()
 			{
 				v_Position = a_Position;
 				v_Color = a_Color;
-				gl_Position = u_ViewProjection * vec4(a_Position, 1.0);	
+				gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);	
 			}
 		)";
 
@@ -84,11 +88,12 @@ public:
 			
 			layout(location = 0) in vec3 a_Position;
 			uniform mat4 u_ViewProjection;
+			uniform mat4 u_Transform;
 			out vec3 v_Position;
 			void main()
 			{
 				v_Position = a_Position;
-				gl_Position = u_ViewProjection * vec4(a_Position, 1.0);	
+				gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);	
 			}
 		)";
 
@@ -106,19 +111,19 @@ public:
 		m_BlueShader.reset(new Prometheus::Shader(blueShaderVertexSrc, blueShaderFragmentSrc));
 	}
 
-	void OnUpdate() override
+	void OnUpdate(Prometheus::Timestep ts) override
 	{
 		if (Prometheus::Input::IsKeyPressed(PM_KEY_LEFT))
-			m_CameraPostion.x -= m_CameraSpeed;
+			m_CameraPostion.x -= m_CameraSpeed * ts;
 
 		if (Prometheus::Input::IsKeyPressed(PM_KEY_RIGHT))
-			m_CameraPostion.x += m_CameraSpeed;
+			m_CameraPostion.x += m_CameraSpeed * ts;
 
 		if (Prometheus::Input::IsKeyPressed(PM_KEY_DOWN))
-			m_CameraPostion.y -= m_CameraSpeed;
+			m_CameraPostion.y -= m_CameraSpeed * ts;
 
 		if (Prometheus::Input::IsKeyPressed(PM_KEY_UP))
-			m_CameraPostion.y += m_CameraSpeed;
+			m_CameraPostion.y += m_CameraSpeed * ts;
 
 		Prometheus::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		Prometheus::RenderCommand::Clear();
@@ -148,7 +153,7 @@ private:
 
 	Prometheus::OrthograhicCamera m_Camera;
 	glm::vec3 m_CameraPostion;
-	float m_CameraSpeed = 0.1f;
+	float m_CameraSpeed = 0.3f;
 };
 
 class Sandbox : public Prometheus::Application {

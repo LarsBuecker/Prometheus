@@ -51,15 +51,6 @@
     <ClInclude Include="src\Prometheus.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Prometheus\Application.h">
-      <Filter>src\Prometheus</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Prometheus\Core.h">
-      <Filter>src\Prometheus</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Prometheus\EntryPoint.h">
-      <Filter>src\Prometheus</Filter>
-    </ClInclude>
     <ClInclude Include="src\Prometheus\Events\ApplicationEvent.h">
       <Filter>src\Prometheus\Events</Filter>
     </ClInclude>
@@ -74,24 +65,6 @@
     </ClInclude>
     <ClInclude Include="src\Prometheus\ImGui\ImGuiLayer.h">
       <Filter>src\Prometheus\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Prometheus\Input.h">
-      <Filter>src\Prometheus</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Prometheus\KeyCodes.h">
-      <Filter>src\Prometheus</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Prometheus\Layer.h">
-      <Filter>src\Prometheus</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Prometheus\LayerStack.h">
-      <Filter>src\Prometheus</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Prometheus\Log.h">
-      <Filter>src\Prometheus</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Prometheus\MouseButtonCodes.h">
-      <Filter>src\Prometheus</Filter>
     </ClInclude>
     <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\Prometheus\Platform\OpenGL</Filter>
@@ -134,9 +107,6 @@
     </ClInclude>
     <ClInclude Include="src\Prometheus\Renderer\VertexArray.h">
       <Filter>src\Prometheus\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Prometheus\Window.h">
-      <Filter>src\Prometheus</Filter>
     </ClInclude>
     <ClInclude Include="src\pmpch.h">
       <Filter>src</Filter>
@@ -1365,25 +1335,44 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="src\Prometheus\Core\Timestep.h" />
+    <ClInclude Include="src\Prometheus\Core\Application.h">
+      <Filter>src\Prometheus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\Core\Core.h">
+      <Filter>src\Prometheus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\Core\EntryPoint.h">
+      <Filter>src\Prometheus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\Core\Input.h">
+      <Filter>src\Prometheus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\Core\KeyCodes.h">
+      <Filter>src\Prometheus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\Core\Layer.h">
+      <Filter>src\Prometheus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\Core\LayerStack.h">
+      <Filter>src\Prometheus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\Core\Log.h">
+      <Filter>src\Prometheus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\Core\MouseButtonCodes.h">
+      <Filter>src\Prometheus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\Core\Window.h">
+      <Filter>src\Prometheus</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Prometheus\Application.cpp">
-      <Filter>src\Prometheus</Filter>
-    </ClCompile>
     <ClCompile Include="src\Prometheus\ImGui\ImGuiBuild.cpp">
       <Filter>src\Prometheus\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Prometheus\ImGui\ImGuiLayer.cpp">
       <Filter>src\Prometheus\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Prometheus\Layer.cpp">
-      <Filter>src\Prometheus</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Prometheus\LayerStack.cpp">
-      <Filter>src\Prometheus</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Prometheus\Log.cpp">
-      <Filter>src\Prometheus</Filter>
     </ClCompile>
     <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLBuffer.cpp">
       <Filter>src\Prometheus\Platform\OpenGL</Filter>
@@ -1426,6 +1415,18 @@
     </ClCompile>
     <ClCompile Include="src\pmpch.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Prometheus\Core\Application.cpp">
+      <Filter>src\Prometheus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Prometheus\Core\Layer.cpp">
+      <Filter>src\Prometheus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Prometheus\Core\LayerStack.cpp">
+      <Filter>src\Prometheus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Prometheus\Core\Log.cpp">
+      <Filter>src\Prometheus</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

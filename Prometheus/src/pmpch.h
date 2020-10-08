@@ -12,7 +12,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Prometheus/Log.h"
+#include "Prometheus/Core/Log.h"
 
 #ifdef PM_PLATFORM_WINDOWS
 	#include <Windows.h>

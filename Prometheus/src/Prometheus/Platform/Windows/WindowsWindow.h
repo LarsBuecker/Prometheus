@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Prometheus/Window.h"
+#include "Prometheus/Core/Window.h"
 #include "Prometheus/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>

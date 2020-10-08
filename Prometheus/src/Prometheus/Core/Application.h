@@ -4,16 +4,12 @@
 
 #include "Window.h"
 #include "LayerStack.h"
-#include "Events/Event.h"
+#include "Prometheus/Events/Event.h"
 #include "Prometheus/Events/ApplicationEvent.h"
 
+#include "Prometheus/Core/Timestep.h"
+
 #include "Prometheus/ImGui/ImGuiLayer.h"
-
-#include "Prometheus/Renderer/Shader.h"
-#include "Prometheus/Renderer/Buffer.h"
-#include "Prometheus/Renderer/VertexArray.h"
-
-#include "Prometheus/Renderer/OrthographicCamera.h"
 
 namespace Prometheus {
 
@@ -34,11 +30,12 @@ namespace Prometheus {
 		inline static Application& Get() { return *s_Instance; }
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
-
+	private:
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+		float m_LastFrameTime = 0.0f;
 	private:
 		static Application* s_Instance;
 	};

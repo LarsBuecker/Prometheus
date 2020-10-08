@@ -1,9 +1,11 @@
 #include "pmpch.h"
 #include "Application.h"
 
-#include "Events/ApplicationEvent.h"
+#include "Prometheus/Events/ApplicationEvent.h"
 
 #include "Prometheus/Renderer/Renderer.h"
+
+#include <GLFW/glfw3.h>
 
 namespace Prometheus {
 
@@ -53,10 +55,14 @@ namespace Prometheus {
 
 	void Application::Run() {
 
-		while (m_Running) {
+		while (m_Running) 
+		{
+			float time = (float)glfwGetTime(); // Platfrom::GetTime
+			Timestep timestep = time - m_LastFrameTime;
+			m_LastFrameTime = time;
 
 			for (Layer* layer : m_LayerStack)
-				layer->OnUpdate();
+				layer->OnUpdate(timestep);
 
 			m_ImGuiLayer->Begin();
 			for (Layer* layer : m_LayerStack)
