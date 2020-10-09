@@ -20,7 +20,6 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Prometheus</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName> </ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -78,7 +77,7 @@
       <PrecompiledHeaderFile>pmpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;PM_PLATFORM_WINDOWS;PM_BUILD_DLL;GLFW_INCLUDE_NONE;PM_DEBUG;PM_ENABLE_ASSERTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -98,7 +97,7 @@
       <PrecompiledHeaderFile>pmpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;PM_PLATFORM_WINDOWS;PM_BUILD_DLL;GLFW_INCLUDE_NONE;PM_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -122,7 +121,7 @@
       <PrecompiledHeaderFile>pmpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;PM_PLATFORM_WINDOWS;PM_BUILD_DLL;GLFW_INCLUDE_NONE;PM_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -144,23 +143,25 @@
     <ClInclude Include="src\Prometheus.h" />
     <ClInclude Include="src\Prometheus\Core\Application.h" />
     <ClInclude Include="src\Prometheus\Core\Core.h" />
-    <ClInclude Include="src\Prometheus\Core\Timestep.h" />
     <ClInclude Include="src\Prometheus\Core\EntryPoint.h" />
-    <ClInclude Include="src\Prometheus\Events\ApplicationEvent.h" />
-    <ClInclude Include="src\Prometheus\Events\Event.h" />
-    <ClInclude Include="src\Prometheus\Events\KeyEvent.h" />
-    <ClInclude Include="src\Prometheus\Events\MouseEvent.h" />
-    <ClInclude Include="src\Prometheus\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Prometheus\Core\Input.h" />
     <ClInclude Include="src\Prometheus\Core\KeyCodes.h" />
     <ClInclude Include="src\Prometheus\Core\Layer.h" />
     <ClInclude Include="src\Prometheus\Core\LayerStack.h" />
     <ClInclude Include="src\Prometheus\Core\Log.h" />
     <ClInclude Include="src\Prometheus\Core\MouseButtonCodes.h" />
+    <ClInclude Include="src\Prometheus\Core\Timestep.h" />
+    <ClInclude Include="src\Prometheus\Core\Window.h" />
+    <ClInclude Include="src\Prometheus\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Prometheus\Events\Event.h" />
+    <ClInclude Include="src\Prometheus\Events\KeyEvent.h" />
+    <ClInclude Include="src\Prometheus\Events\MouseEvent.h" />
+    <ClInclude Include="src\Prometheus\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLShader.h" />
+    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLTexture.h" />
     <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Prometheus\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Prometheus\Platform\Windows\WindowsWindow.h" />
@@ -171,8 +172,8 @@
     <ClInclude Include="src\Prometheus\Renderer\Renderer.h" />
     <ClInclude Include="src\Prometheus\Renderer\RendererAPI.h" />
     <ClInclude Include="src\Prometheus\Renderer\Shader.h" />
+    <ClInclude Include="src\Prometheus\Renderer\Texture.h" />
     <ClInclude Include="src\Prometheus\Renderer\VertexArray.h" />
-    <ClInclude Include="src\Prometheus\Core\Window.h" />
     <ClInclude Include="src\pmpch.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_features.hpp" />
@@ -582,19 +583,21 @@
     <ClInclude Include="vendor\glm\glm\vec3.hpp" />
     <ClInclude Include="vendor\glm\glm\vec4.hpp" />
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp" />
+    <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Prometheus\Core\Application.cpp" />
-    <ClCompile Include="src\Prometheus\ImGui\ImGuiBuild.cpp" />
-    <ClCompile Include="src\Prometheus\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Prometheus\Core\Layer.cpp" />
     <ClCompile Include="src\Prometheus\Core\LayerStack.cpp" />
     <ClCompile Include="src\Prometheus\Core\Log.cpp" />
+    <ClCompile Include="src\Prometheus\ImGui\ImGuiBuild.cpp" />
+    <ClCompile Include="src\Prometheus\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLRendererAPI.cpp" />
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLShader.cpp" />
+    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLTexture.cpp" />
+    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Prometheus\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Prometheus\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Prometheus\Renderer\Buffer.cpp" />
@@ -603,10 +606,12 @@
     <ClCompile Include="src\Prometheus\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Prometheus\Renderer\RendererAPI.cpp" />
     <ClCompile Include="src\Prometheus\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Prometheus\Renderer\Texture.cpp" />
     <ClCompile Include="src\Prometheus\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\pmpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="vendor\stb_image\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

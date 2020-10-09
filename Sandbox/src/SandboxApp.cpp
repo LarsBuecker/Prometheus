@@ -147,15 +147,20 @@ public:
 
 			in vec2 v_TexCoord;
 
-			uniform vec3 u_Color;			
+			uniform sampler2D u_Texture;		
 
 			void main()
 			{
-				color = vec4(v_TexCoord, 0.0, 1.0);
+				color = texture(u_Texture, v_TexCoord);
 			}
 		)";
 
 		m_TextureShader.reset(Prometheus::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
+	
+		m_Texture = Prometheus::Texture2D::Create("assets/textures/Checkerboard.png");
+
+		std::dynamic_pointer_cast<Prometheus::OpenGLShader>(m_TextureShader)->Bind();
+		std::dynamic_pointer_cast<Prometheus::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
 	}
 
 	void OnUpdate(Prometheus::Timestep ts) override
@@ -195,6 +200,7 @@ public:
 			}
 		}
 
+		m_Texture->Bind();
 		Prometheus::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		// Triangle
@@ -221,6 +227,8 @@ private:
 
 	Prometheus::Ref<Prometheus::Shader> m_FlatColorShader, m_TextureShader;
 	Prometheus::Ref<Prometheus::VertexArray> m_SquareVA;
+
+	Prometheus::Ref<Prometheus::Texture2D> m_Texture;
 
 	Prometheus::OrthograhicCamera m_Camera;
 	glm::vec3 m_CameraPostion;
