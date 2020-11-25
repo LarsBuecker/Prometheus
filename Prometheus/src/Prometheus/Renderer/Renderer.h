@@ -10,6 +10,8 @@ namespace Prometheus {
 	class Renderer
 	{
 	public:
+		static void Init();
+
 		static void BeginScene(OrthograhicCamera& camera);
 		static void EndScene();
 		

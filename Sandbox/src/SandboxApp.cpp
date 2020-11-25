@@ -158,6 +158,7 @@ public:
 		m_TextureShader.reset(Prometheus::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
 	
 		m_Texture = Prometheus::Texture2D::Create("assets/textures/Checkerboard.png");
+		m_FlameTexture = Prometheus::Texture2D::Create("assets/textures/FlameLogo.png");
 
 		std::dynamic_pointer_cast<Prometheus::OpenGLShader>(m_TextureShader)->Bind();
 		std::dynamic_pointer_cast<Prometheus::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
@@ -202,6 +203,8 @@ public:
 
 		m_Texture->Bind();
 		Prometheus::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		m_FlameTexture->Bind();
+		Prometheus::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		// Triangle
 		//Prometheus::Renderer::Submit(m_Shader, m_VertexArray);
@@ -228,7 +231,7 @@ private:
 	Prometheus::Ref<Prometheus::Shader> m_FlatColorShader, m_TextureShader;
 	Prometheus::Ref<Prometheus::VertexArray> m_SquareVA;
 
-	Prometheus::Ref<Prometheus::Texture2D> m_Texture;
+	Prometheus::Ref<Prometheus::Texture2D> m_Texture, m_FlameTexture;
 
 	Prometheus::OrthograhicCamera m_Camera;
 	glm::vec3 m_CameraPostion;
