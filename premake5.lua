@@ -18,6 +18,7 @@ IncludeDir["GLFW"] = "Prometheus/vendor/GLFW/include"
 IncludeDir["Glad"] = "Prometheus/vendor/Glad/include"
 IncludeDir["ImGui"] = "Prometheus/vendor/imgui"
 IncludeDir["glm"] = "Prometheus/vendor/glm"
+IncludeDir["stb_image"] = "Prometheus/vendor/stb_image"
 
 group "Dependencies"
 	include "Prometheus/vendor/GLFW"
@@ -43,6 +44,8 @@ project "Prometheus"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
@@ -59,7 +62,8 @@ project "Prometheus"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 	}
 
 	links
