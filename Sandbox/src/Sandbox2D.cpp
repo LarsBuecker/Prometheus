@@ -13,29 +13,6 @@ Sandbox2D::Sandbox2D()
 
 void Sandbox2D::OnAttach()
 {
-	m_SquareVA = Prometheus::VertexArray::Create();
-
-	float squareVertices[5 * 4] = {
-		-0.5f, -0.5f, 0.0f,
-		 0.5f, -0.5f, 0.0f,
-		 0.5f,  0.5f, 0.0f,
-		-0.5f,  0.5f, 0.0f
-	};
-
-	Prometheus::Ref<Prometheus::VertexBuffer> squareVB;
-	squareVB.reset(Prometheus::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
-	squareVB->SetLayout({
-		{ Prometheus::ShaderDataType::Float3, "a_Position" }
-	});
-	m_SquareVA->AddVertexBuffer(squareVB);
-
-	uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-	Prometheus::Ref<Prometheus::IndexBuffer> squareIB;
-	squareIB.reset(Prometheus::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
-	m_SquareVA->SetIndexBuffer(squareIB);
-
-	m_FlatColorShader = Prometheus::Shader::Create("assets/shaders/FlatColor.glsl");
-
 }
 
 void Sandbox2D::OnDetach()
@@ -52,13 +29,12 @@ void Sandbox2D::OnUpdate(Prometheus::Timestep ts)
 	Prometheus::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 	Prometheus::RenderCommand::Clear();
 
-	Prometheus::Renderer::BeginScene(m_CameraController.GetCamera());
+	Prometheus::Renderer2D::BeginScene(m_CameraController.GetCamera());
+	
+	Prometheus::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
+	Prometheus::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, { 0.2f, 0.3f, 0.8f, 1.0f });
 
-	std::dynamic_pointer_cast<Prometheus::OpenGLShader>(m_FlatColorShader)->Bind();
-	std::dynamic_pointer_cast<Prometheus::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat4("u_Color", m_SquareColor);
-	Prometheus::Renderer::Submit(m_FlatColorShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
-
-	Prometheus::Renderer::EndScene();
+	Prometheus::Renderer2D::EndScene();
 }
 
 void Sandbox2D::OnImGuiRender()
