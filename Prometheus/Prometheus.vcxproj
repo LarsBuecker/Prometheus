@@ -140,6 +140,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Prometheus\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="src\Prometheus.h" />
     <ClInclude Include="src\Prometheus\Core\Application.h" />
     <ClInclude Include="src\Prometheus\Core\Core.h" />
@@ -157,14 +158,14 @@
     <ClInclude Include="src\Prometheus\Events\KeyEvent.h" />
     <ClInclude Include="src\Prometheus\Events\MouseEvent.h" />
     <ClInclude Include="src\Prometheus\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLBuffer.h" />
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLContext.h" />
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLRendererAPI.h" />
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLShader.h" />
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLTexture.h" />
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLVertexArray.h" />
-    <ClInclude Include="src\Prometheus\Platform\Windows\WindowsInput.h" />
-    <ClInclude Include="src\Prometheus\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Prometheus\Renderer\Buffer.h" />
     <ClInclude Include="src\Prometheus\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Prometheus\Renderer\OrthographicCamera.h" />
@@ -586,20 +587,21 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Prometheus\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Prometheus\Core\Application.cpp" />
     <ClCompile Include="src\Prometheus\Core\Layer.cpp" />
     <ClCompile Include="src\Prometheus\Core\LayerStack.cpp" />
     <ClCompile Include="src\Prometheus\Core\Log.cpp" />
     <ClCompile Include="src\Prometheus\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Prometheus\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLBuffer.cpp" />
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLContext.cpp" />
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLRendererAPI.cpp" />
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLShader.cpp" />
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLTexture.cpp" />
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLVertexArray.cpp" />
-    <ClCompile Include="src\Prometheus\Platform\Windows\WindowsInput.cpp" />
-    <ClCompile Include="src\Prometheus\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Prometheus\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Prometheus\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\Prometheus\Renderer\RenderCommand.cpp" />

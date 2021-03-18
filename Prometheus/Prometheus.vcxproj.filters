@@ -105,28 +105,28 @@
     <ClInclude Include="src\Prometheus\ImGui\ImGuiLayer.h">
       <Filter>src\Prometheus\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLBuffer.h">
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\Prometheus\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLContext.h">
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
       <Filter>src\Prometheus\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLRendererAPI.h">
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
       <Filter>src\Prometheus\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLShader.h">
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h">
       <Filter>src\Prometheus\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLTexture.h">
+    <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h">
       <Filter>src\Prometheus\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLVertexArray.h">
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
       <Filter>src\Prometheus\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\Prometheus\Platform\Windows\WindowsInput.h">
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
       <Filter>src\Prometheus\Platform\Windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\Prometheus\Platform\Windows\WindowsWindow.h">
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>src\Prometheus\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Prometheus\Renderer\Buffer.h">
@@ -1386,6 +1386,7 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
+    <ClInclude Include="src\Prometheus\Renderer\OrthographicCameraController.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Prometheus\Core\Application.cpp">
@@ -1406,28 +1407,28 @@
     <ClCompile Include="src\Prometheus\ImGui\ImGuiLayer.cpp">
       <Filter>src\Prometheus\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLBuffer.cpp">
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
       <Filter>src\Prometheus\Platform\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLContext.cpp">
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
       <Filter>src\Prometheus\Platform\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLRendererAPI.cpp">
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
       <Filter>src\Prometheus\Platform\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLShader.cpp">
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp">
       <Filter>src\Prometheus\Platform\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLTexture.cpp">
+    <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp">
       <Filter>src\Prometheus\Platform\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLVertexArray.cpp">
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
       <Filter>src\Prometheus\Platform\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="src\Prometheus\Platform\Windows\WindowsInput.cpp">
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Prometheus\Platform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\Prometheus\Platform\Windows\WindowsWindow.cpp">
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>src\Prometheus\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Prometheus\Renderer\Buffer.cpp">
@@ -1460,5 +1461,6 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
+    <ClCompile Include="src\Prometheus\Renderer\OrthographicCameraController.cpp" />
   </ItemGroup>
 </Project>

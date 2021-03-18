@@ -1,7 +1,7 @@
 #include "pmpch.h"
 #include "RenderCommand.h"
 
-#include "Prometheus/Platform/OpenGL/OpenGLRendererAPI.h"
+#include "Platform/OpenGL/OpenGLRendererAPI.h"
 
 namespace Prometheus {
 

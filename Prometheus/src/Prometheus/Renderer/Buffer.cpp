@@ -3,7 +3,7 @@
 
 #include "Renderer.h"
 
-#include "Prometheus/Platform/OpenGL/OpenGLBuffer.h"
+#include "Platform/OpenGL/OpenGLBuffer.h"
 
 namespace Prometheus {
 

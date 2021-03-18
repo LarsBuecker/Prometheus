@@ -32,8 +32,8 @@ namespace Prometheus {
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class PROMETHEUS_API Event {
-		friend class EventDispatcher;
+	class Event {
+		//friend class EventDispatcher;
 	public:
 		bool Handled = false;
 
@@ -42,27 +42,26 @@ namespace Prometheus {
 		virtual int GetCategoryFlags() const = 0;
 		virtual std::string ToString() const { return GetName(); }
 
-		inline bool isInCategory(EventCategory category) {
+		bool IsInCategory(EventCategory category) {
 			return GetCategoryFlags() & category;
 		}
 	};
 
 	class EventDispatcher
 	{
-		template<typename T>
-		using EventFn = std::function<bool(T&)>;
 	public:
 		EventDispatcher(Event& event)
 			: m_Event(event)
 		{
 		}
 
-		template<typename T>
-		bool Dispatch(EventFn<T> func)
+		// F will be deduced by the compiler
+		template<typename T, typename F>
+		bool Dispatch(const F& func)
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.Handled = func(*(T*)&m_Event);
+				m_Event.Handled = func(static_cast<T&>(m_Event));
 				return true;
 			}
 			return false;

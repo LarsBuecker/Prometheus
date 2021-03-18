@@ -24,6 +24,7 @@
 #include "Prometheus/Renderer/VertexArray.h"
 
 #include "Prometheus/Renderer/OrthographicCamera.h"
+#include "Prometheus/Renderer/OrthographicCameraController.h"
 // ---------------------------------------------
 
 // --- Entry Point -----------------------------

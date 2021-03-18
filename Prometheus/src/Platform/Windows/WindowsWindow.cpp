@@ -5,7 +5,7 @@
 #include "Prometheus/Events/KeyEvent.h"
 #include "Prometheus/Events/MouseEvent.h"
 
-#include "Prometheus/Platform/OpenGL/OpenGLContext.h"
+#include "Platform/OpenGL/OpenGLContext.h"
 
 
 

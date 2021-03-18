@@ -1,6 +1,6 @@
 #include "Prometheus.h"
 
-#include "Prometheus/Platform/OpenGL/OpenGLShader.h"
+#include "Platform/OpenGL/OpenGLShader.h"
 
 #include "imgui/imgui.h"
 
@@ -11,7 +11,7 @@
 class ExampleLayer : public Prometheus::Layer {
 public:
 	ExampleLayer()
-		: Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPostion(0.0f)
+		: Layer("Example"), m_CameraController(1280.0f / 720.0f, false)
 	{
 		m_VertexArray.reset(Prometheus::VertexArray::Create());
 
@@ -133,25 +133,14 @@ public:
 
 	void OnUpdate(Prometheus::Timestep ts) override
 	{
-		if (Prometheus::Input::IsKeyPressed(PM_KEY_LEFT))
-			m_CameraPostion.x -= m_CameraSpeed * ts;
+		// Update
+		m_CameraController.OnUpdate(ts);
 
-		if (Prometheus::Input::IsKeyPressed(PM_KEY_RIGHT))
-			m_CameraPostion.x += m_CameraSpeed * ts;
-
-		if (Prometheus::Input::IsKeyPressed(PM_KEY_DOWN))
-			m_CameraPostion.y -= m_CameraSpeed * ts;
-
-		if (Prometheus::Input::IsKeyPressed(PM_KEY_UP))
-			m_CameraPostion.y += m_CameraSpeed * ts;
-
+		// Render
 		Prometheus::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		Prometheus::RenderCommand::Clear();
 
-		m_Camera.SetPosition(m_CameraPostion);
-		m_Camera.SetRotation(0.0f);
-
-		Prometheus::Renderer::BeginScene(m_Camera);
+		Prometheus::Renderer::BeginScene(m_CameraController.GetCamera());
 
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
@@ -188,7 +177,7 @@ public:
 
 	void OnEvent(Prometheus::Event& event) override
 	{
-
+		m_CameraController.OnEvent(event);
 	}
 
 private:
@@ -200,9 +189,7 @@ private:
 
 	Prometheus::Ref<Prometheus::Texture2D> m_Texture, m_FlameTexture;
 
-	Prometheus::OrthograhicCamera m_Camera;
-	glm::vec3 m_CameraPostion;
-	float m_CameraSpeed = 5.0f;
+	Prometheus::OrthographicCameraController m_CameraController;
 
 	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 };

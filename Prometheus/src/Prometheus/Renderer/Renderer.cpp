@@ -1,7 +1,7 @@
 #include "pmpch.h"
 #include "Renderer.h"
 
-#include "Prometheus/Platform/OpenGL/OpenGLShader.h"
+#include "Platform/OpenGL/OpenGLShader.h"
 
 namespace Prometheus {
 
@@ -12,7 +12,7 @@ namespace Prometheus {
 		RenderCommand::Init();
 	}
 
-	void Renderer::BeginScene(OrthograhicCamera& camera)
+	void Renderer::BeginScene(OrthographicCamera& camera)
 	{
 		s_SceneData->ViewProjectionMatrix = camera.GetViewProjectionMatrix();
 	}
