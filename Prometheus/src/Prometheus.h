@@ -26,7 +26,3 @@
 #include "Prometheus/Renderer/OrthographicCamera.h"
 #include "Prometheus/Renderer/OrthographicCameraController.h"
 // ---------------------------------------------
-
-// --- Entry Point -----------------------------
-#include "Prometheus/Core/EntryPoint.h"
-// ---------------------------------------------

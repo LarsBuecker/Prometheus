@@ -1,4 +1,5 @@
 #include "Prometheus.h"
+#include "Prometheus/Core/EntryPoint.h"
 
 #include "Platform/OpenGL/OpenGLShader.h"
 
@@ -7,13 +8,15 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include "Sandbox2D.h"
+
 
 class ExampleLayer : public Prometheus::Layer {
 public:
 	ExampleLayer()
 		: Layer("Example"), m_CameraController(1280.0f / 720.0f, false)
 	{
-		m_VertexArray.reset(Prometheus::VertexArray::Create());
+		m_VertexArray = Prometheus::VertexArray::Create();
 
 		float vertices[3 * 7] = {
 			-0.5f, -0.5f, 0.0f, 0.8f, 0.2f, 0.8f, 1.0f,
@@ -35,7 +38,7 @@ public:
 		indexBuffer.reset(Prometheus::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
-		m_SquareVA.reset(Prometheus::VertexArray::Create());
+		m_SquareVA = Prometheus::VertexArray::Create();
 
 		float squareVertices[5 * 4] = {
 			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
@@ -196,12 +199,14 @@ private:
 
 class Sandbox : public Prometheus::Application {
 public:
-	Sandbox() {
-		PushLayer(new ExampleLayer());
+	Sandbox() 
+	{
+		// PushLayer(new ExampleLayer());
+		PushLayer(new Sandbox2D());
 	}
 
-	~Sandbox() {
-
+	~Sandbox() 
+	{
 	}
 };
 
