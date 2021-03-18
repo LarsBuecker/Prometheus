@@ -13,6 +13,7 @@ Sandbox2D::Sandbox2D()
 
 void Sandbox2D::OnAttach()
 {
+	m_CheckerboardTexture = Prometheus::Texture2D::Create("assets/textures/Checkerboard.png");
 }
 
 void Sandbox2D::OnDetach()
@@ -33,7 +34,7 @@ void Sandbox2D::OnUpdate(Prometheus::Timestep ts)
 	
 	Prometheus::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
 	Prometheus::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, { 0.2f, 0.3f, 0.8f, 1.0f });
-
+	Prometheus::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f}, { 20.0f, 20.0f }, m_CheckerboardTexture);
 	Prometheus::Renderer2D::EndScene();
 }
 

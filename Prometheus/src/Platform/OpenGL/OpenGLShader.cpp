@@ -173,7 +173,12 @@ namespace Prometheus {
 		glUseProgram(0);
 	}
 
-	void OpenGLShader::SetFloat(const std::string& name, const float& value)
+	void OpenGLShader::SetInt(const std::string& name, const int value)
+	{
+		UploadUniformInt(name, value);
+	}
+
+	void OpenGLShader::SetFloat(const std::string& name, const float value)
 	{
 		UploadUniformFloat(name, value);
 	}
