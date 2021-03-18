@@ -4,6 +4,15 @@
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Platform">
+      <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\OpenGL">
+      <UniqueIdentifier>{35A49437-A105-7245-2A73-B8F796D3A804}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\Windows">
+      <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Prometheus">
       <UniqueIdentifier>{083B8ABA-F408-7EC0-DD9C-EEE6C9095A25}</UniqueIdentifier>
     </Filter>
@@ -15,15 +24,6 @@
     </Filter>
     <Filter Include="src\Prometheus\ImGui">
       <UniqueIdentifier>{32D6E480-1E65-6E4A-C783-8245B3F17EF0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Prometheus\Platform">
-      <UniqueIdentifier>{5C603F61-C897-87F8-D1A1-EB1B3D58AEF1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Prometheus\Platform\OpenGL">
-      <UniqueIdentifier>{108A381E-FCAF-0285-E5F5-8750D1BA2751}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Prometheus\Platform\Windows">
-      <UniqueIdentifier>{96A6653D-028A-747D-0B8D-A2B977EF3ACE}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Prometheus\Renderer">
       <UniqueIdentifier>{AE671C3C-1A9F-64D3-23A9-C8F68F5F8BCC}</UniqueIdentifier>
@@ -54,6 +54,30 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
+      <Filter>src\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>src\Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\Prometheus.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -105,30 +129,6 @@
     <ClInclude Include="src\Prometheus\ImGui\ImGuiLayer.h">
       <Filter>src\Prometheus\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLBuffer.h">
-      <Filter>src\Prometheus\Platform\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLContext.h">
-      <Filter>src\Prometheus\Platform\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLRendererAPI.h">
-      <Filter>src\Prometheus\Platform\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLShader.h">
-      <Filter>src\Prometheus\Platform\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLTexture.h">
-      <Filter>src\Prometheus\Platform\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Prometheus\Platform\OpenGL\OpenGLVertexArray.h">
-      <Filter>src\Prometheus\Platform\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Prometheus\Platform\Windows\WindowsInput.h">
-      <Filter>src\Prometheus\Platform\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Prometheus\Platform\Windows\WindowsWindow.h">
-      <Filter>src\Prometheus\Platform\Windows</Filter>
-    </ClInclude>
     <ClInclude Include="src\Prometheus\Renderer\Buffer.h">
       <Filter>src\Prometheus\Renderer</Filter>
     </ClInclude>
@@ -136,6 +136,9 @@
       <Filter>src\Prometheus\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Prometheus\Renderer\OrthographicCamera.h">
+      <Filter>src\Prometheus\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\Renderer\OrthographicCameraController.h">
       <Filter>src\Prometheus\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Prometheus\Renderer\RenderCommand.h">
@@ -1386,8 +1389,33 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
+    <ClInclude Include="src\Prometheus\Renderer\Renderer2D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
+      <Filter>src\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>src\Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\Prometheus\Core\Application.cpp">
       <Filter>src\Prometheus\Core</Filter>
     </ClCompile>
@@ -1406,34 +1434,13 @@
     <ClCompile Include="src\Prometheus\ImGui\ImGuiLayer.cpp">
       <Filter>src\Prometheus\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLBuffer.cpp">
-      <Filter>src\Prometheus\Platform\OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLContext.cpp">
-      <Filter>src\Prometheus\Platform\OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLRendererAPI.cpp">
-      <Filter>src\Prometheus\Platform\OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLShader.cpp">
-      <Filter>src\Prometheus\Platform\OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLTexture.cpp">
-      <Filter>src\Prometheus\Platform\OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Prometheus\Platform\OpenGL\OpenGLVertexArray.cpp">
-      <Filter>src\Prometheus\Platform\OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Prometheus\Platform\Windows\WindowsInput.cpp">
-      <Filter>src\Prometheus\Platform\Windows</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Prometheus\Platform\Windows\WindowsWindow.cpp">
-      <Filter>src\Prometheus\Platform\Windows</Filter>
-    </ClCompile>
     <ClCompile Include="src\Prometheus\Renderer\Buffer.cpp">
       <Filter>src\Prometheus\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Prometheus\Renderer\OrthographicCamera.cpp">
+      <Filter>src\Prometheus\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Prometheus\Renderer\OrthographicCameraController.cpp">
       <Filter>src\Prometheus\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Prometheus\Renderer\RenderCommand.cpp">
@@ -1460,5 +1467,6 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
+    <ClCompile Include="src\Prometheus\Renderer\Renderer2D.cpp" />
   </ItemGroup>
 </Project>

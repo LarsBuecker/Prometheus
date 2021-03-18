@@ -16,6 +16,7 @@
 
 // --- Renderer  --------------------------------
 #include "Prometheus/Renderer/Renderer.h"
+#include "Prometheus/Renderer/Renderer2D.h"
 #include "Prometheus/Renderer/RenderCommand.h"
 
 #include "Prometheus/Renderer/Buffer.h"
@@ -24,8 +25,5 @@
 #include "Prometheus/Renderer/VertexArray.h"
 
 #include "Prometheus/Renderer/OrthographicCamera.h"
-// ---------------------------------------------
-
-// --- Entry Point -----------------------------
-#include "Prometheus/Core/EntryPoint.h"
+#include "Prometheus/Renderer/OrthographicCameraController.h"
 // ---------------------------------------------
