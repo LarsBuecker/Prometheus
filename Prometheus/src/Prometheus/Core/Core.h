@@ -2,6 +2,8 @@
 
 #include <memory>
 
+#define PM_PROFILE 0
+
 #ifdef _WIN32
 	// Windows x64/x86
 	#ifdef _WIN64

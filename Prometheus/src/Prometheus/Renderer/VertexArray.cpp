@@ -8,6 +8,7 @@ namespace Prometheus {
 	
 	Ref<VertexArray> VertexArray::Create()
 	{
+
 		switch (Renderer::GetAPI())
 		{
 			case RendererAPI::API::None:		PM_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;

@@ -23,14 +23,19 @@ namespace Prometheus {
 	}
 
 	WindowsWindow::WindowsWindow(const WindowProps& props) {
+		PM_PROFILE_FUNCTION();
 		Init(props);
 	}
 
 	WindowsWindow::~WindowsWindow() {
+		PM_PROFILE_FUNCTION();
+
 		Shutdown();
 	}
 
 	void WindowsWindow::Init(const WindowProps& props) {
+		PM_PROFILE_FUNCTION();
+
 		m_Data.Title = props.Title;
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height;
@@ -145,11 +150,15 @@ namespace Prometheus {
 
 	void WindowsWindow::Shutdown()
 	{
+		PM_PROFILE_FUNCTION();
+
 		glfwDestroyWindow(m_Window);
 	}
 
 	void WindowsWindow::OnUpdate()
 	{
+		PM_PROFILE_FUNCTION();
+
 		glfwPollEvents();
 		m_Context->SwapBuffers();
 		
@@ -157,6 +166,8 @@ namespace Prometheus {
 
 	void WindowsWindow::SetVSync(bool enabled)
 	{
+		PM_PROFILE_FUNCTION();
+
 		if (enabled)
 			glfwSwapInterval(1);
 		else

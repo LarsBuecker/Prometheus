@@ -10,8 +10,16 @@ namespace Prometheus {
 
 	void Renderer::Init()
 	{
+		PM_PROFILE_FUNCTION();
+
 		RenderCommand::Init();
 		Renderer2D::Init();
+	}
+
+	void Renderer::Shutdown()
+	{
+		PM_PROFILE_FUNCTION();
+
 	}
 
 	void Renderer::OnWindowResize(uint32_t width, uint32_t height)

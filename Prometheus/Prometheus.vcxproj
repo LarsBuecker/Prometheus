@@ -160,6 +160,7 @@
     <ClInclude Include="src\Prometheus\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\Prometheus\Core\Timestep.h" />
     <ClInclude Include="src\Prometheus\Core\Window.h" />
+    <ClInclude Include="src\Prometheus\Debug\Instrumentor.h" />
     <ClInclude Include="src\Prometheus\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Prometheus\Events\Event.h" />
     <ClInclude Include="src\Prometheus\Events\KeyEvent.h" />

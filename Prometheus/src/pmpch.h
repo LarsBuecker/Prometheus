@@ -13,6 +13,7 @@
 #include <unordered_set>
 
 #include "Prometheus/Core/Log.h"
+#include "Prometheus/Debug/Instrumentor.h"
 
 #ifdef PM_PLATFORM_WINDOWS
 	#include <Windows.h>

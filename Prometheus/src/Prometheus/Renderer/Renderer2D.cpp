@@ -20,6 +20,8 @@ namespace Prometheus {
 
 	void Renderer2D::Init()
 	{
+		PM_PROFILE_FUNCTION();
+
 		s_Data = new Renderer2DData;
 
 		s_Data->QuadVertexArray = VertexArray::Create();
@@ -54,17 +56,22 @@ namespace Prometheus {
 
 	void Renderer2D::Shutdown()
 	{
+		PM_PROFILE_FUNCTION();
+
 		delete s_Data;
 	}
 
 	void Renderer2D::BeginScene(const OrthographicCamera& camera)
 	{
+		PM_PROFILE_FUNCTION();
+
 		s_Data->TextureShader->Bind();
 		s_Data->TextureShader->SetMat4("u_ViewProjection", camera.GetViewProjectionMatrix());
 	}
 
 	void Renderer2D::EndScene()
 	{
+		PM_PROFILE_FUNCTION();
 
 	}
 
@@ -75,6 +82,8 @@ namespace Prometheus {
 
 	void Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color)
 	{
+		PM_PROFILE_FUNCTION();
+
 		s_Data->TextureShader->SetFloat4("u_Color", color);
 		s_Data->WhiteTexture->Bind();
 
@@ -85,13 +94,55 @@ namespace Prometheus {
 		RenderCommand::DrawIndexed(s_Data->QuadVertexArray);
 	}
 
-	void Renderer2D::DrawQuad(const glm::vec2& position, const glm::vec2& size, const Ref<Texture2D> texture, const glm::vec4& tintColor)
+	void Renderer2D::DrawQuad(const glm::vec2& position, const glm::vec2& size, const Ref<Texture2D> texture, const float tilingFactor, const glm::vec4& tintColor)
 	{
-		DrawQuad({ position.x, position.y, 0 }, size, texture);
+		DrawQuad({ position.x, position.y, 0 }, size, texture, tilingFactor, tintColor);
 	}
 
-	void Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const Ref<Texture2D> texture, const glm::vec4& tintColor)
+	void Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const Ref<Texture2D> texture, const float tilingFactor, const glm::vec4& tintColor)
 	{
+		PM_PROFILE_FUNCTION();
+
+		s_Data->TextureShader->SetFloat("u_TilingFactor", tilingFactor);
+		s_Data->TextureShader->SetFloat4("u_Color", tintColor);
+		texture->Bind();
+
+		glm::mat4 transform = glm::translate(glm::mat4(1.0f), position) * glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
+		s_Data->TextureShader->SetMat4("u_Transform", transform);
+
+		s_Data->QuadVertexArray->Bind();
+		RenderCommand::DrawIndexed(s_Data->QuadVertexArray);
+	}
+
+	void Renderer2D::DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const glm::vec4& color)
+	{
+		DrawRotatedQuad({ position.x, position.y, 0 }, size, rotation, color);
+	}
+
+	void Renderer2D::DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const glm::vec4& color)
+	{
+		PM_PROFILE_FUNCTION();
+
+		s_Data->TextureShader->SetFloat4("u_Color", color);
+		s_Data->WhiteTexture->Bind();
+
+		glm::mat4 transform = glm::translate(glm::mat4(1.0f), position) * glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
+		s_Data->TextureShader->SetMat4("u_Transform", transform);
+
+		s_Data->QuadVertexArray->Bind();
+		RenderCommand::DrawIndexed(s_Data->QuadVertexArray);
+	}
+
+	void Renderer2D::DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const Ref<Texture2D> texture, const float tilingFactor /*= 1*/, const glm::vec4& tintColor /*= glm::vec4(1.0f)*/)
+	{
+		DrawRotatedQuad({ position.x, position.y, 0 }, size, rotation, texture, tilingFactor, tintColor);
+	}
+
+	void Renderer2D::DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const Ref<Texture2D> texture, const float tilingFactor /*= 1*/, const glm::vec4& tintColor /*= glm::vec4(1.0f)*/)
+	{
+		PM_PROFILE_FUNCTION();
+
+		s_Data->TextureShader->SetFloat("u_TilingFactor", tilingFactor);
 		s_Data->TextureShader->SetFloat4("u_Color", tintColor);
 		texture->Bind();
 
