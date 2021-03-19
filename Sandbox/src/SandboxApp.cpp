@@ -24,8 +24,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
 
-		Prometheus::Ref<Prometheus::VertexBuffer> vertexBuffer;
-		vertexBuffer.reset(Prometheus::VertexBuffer::Create(vertices, sizeof(vertices)));
+		Prometheus::Ref<Prometheus::VertexBuffer> vertexBuffer =Prometheus::VertexBuffer::Create(vertices, sizeof(vertices));
 		Prometheus::BufferLayout layout = {
 			{ Prometheus::ShaderDataType::Float3, "a_Position" },
 			{ Prometheus::ShaderDataType::Float4, "a_Color" }
@@ -34,8 +33,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		Prometheus::Ref<Prometheus::IndexBuffer> indexBuffer;
-		indexBuffer.reset(Prometheus::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		Prometheus::Ref<Prometheus::IndexBuffer> indexBuffer = Prometheus::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
 		m_SquareVA = Prometheus::VertexArray::Create();
@@ -47,8 +45,7 @@ public:
 			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
-		Prometheus::Ref<Prometheus::VertexBuffer> squareVB;
-		squareVB.reset(Prometheus::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+		Prometheus::Ref<Prometheus::VertexBuffer> squareVB = Prometheus::VertexBuffer::Create(squareVertices, sizeof(squareVertices));
 		squareVB->SetLayout({
 			{ Prometheus::ShaderDataType::Float3, "a_Position" },
 			{ Prometheus::ShaderDataType::Float2, "a_TexCoord" }
@@ -56,8 +53,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		Prometheus::Ref<Prometheus::IndexBuffer> squareIB;
-		squareIB.reset(Prometheus::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+		Prometheus::Ref<Prometheus::IndexBuffer> squareIB = Prometheus::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
 		std::string vertexSrc = R"(

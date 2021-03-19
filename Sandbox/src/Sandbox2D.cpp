@@ -43,7 +43,7 @@ void Sandbox2D::OnUpdate(Prometheus::Timestep ts)
 		Prometheus::Renderer2D::BeginScene(m_CameraController.GetCamera());
 		Prometheus::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
 		Prometheus::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, { 0.2f, 0.3f, 0.8f, 1.0f });
-		Prometheus::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 20.0f, 20.0f }, m_CheckerboardTexture, 10, m_SquareColor);
+		Prometheus::Renderer2D::DrawQuad({ -10.0f, -10.0f, -0.1f }, { 20.0f, 20.0f }, m_CheckerboardTexture, 10, m_SquareColor);
 		Prometheus::Renderer2D::DrawRotatedQuad({ -2.0f, -0.5f }, { 1.0f, 0.7f }, glm::radians(45.0f), { 0.6f, 0.1f, 0.8f, 1.0f });
 		Prometheus::Renderer2D::EndScene();
 	}
