@@ -19,6 +19,9 @@
     <Filter Include="src\Prometheus\Core">
       <UniqueIdentifier>{60844997-CCE5-26A5-5553-6D57C1B35D64}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Prometheus\Debug">
+      <UniqueIdentifier>{7E6B8680-6AFA-0F4A-1319-2445FF8620F0}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Prometheus\Events">
       <UniqueIdentifier>{EC2DDE94-589A-998F-218E-31ED8DB9BBF7}</UniqueIdentifier>
     </Filter>
@@ -114,6 +117,9 @@
     <ClInclude Include="src\Prometheus\Core\Window.h">
       <Filter>src\Prometheus\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Prometheus\Debug\Instrumentor.h">
+      <Filter>src\Prometheus\Debug</Filter>
+    </ClInclude>
     <ClInclude Include="src\Prometheus\Events\ApplicationEvent.h">
       <Filter>src\Prometheus\Events</Filter>
     </ClInclude>
@@ -145,6 +151,9 @@
       <Filter>src\Prometheus\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Prometheus\Renderer\Renderer.h">
+      <Filter>src\Prometheus\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\Renderer\Renderer2D.h">
       <Filter>src\Prometheus\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Prometheus\Renderer\RendererAPI.h">
@@ -1389,8 +1398,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Prometheus\Renderer\Renderer2D.h" />
-    <ClInclude Include="src\Prometheus\Debug\Instrumentor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
@@ -1450,6 +1457,9 @@
     <ClCompile Include="src\Prometheus\Renderer\Renderer.cpp">
       <Filter>src\Prometheus\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Prometheus\Renderer\Renderer2D.cpp">
+      <Filter>src\Prometheus\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Prometheus\Renderer\RendererAPI.cpp">
       <Filter>src\Prometheus\Renderer</Filter>
     </ClCompile>
@@ -1468,6 +1478,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\Prometheus\Renderer\Renderer2D.cpp" />
   </ItemGroup>
 </Project>
