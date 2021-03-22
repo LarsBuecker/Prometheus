@@ -16,6 +16,9 @@ void Sandbox2D::OnAttach()
 	PM_PROFILE_FUNCTION();
 
 	m_CheckerboardTexture = Prometheus::Texture2D::Create("assets/textures/Checkerboard.png");
+	m_SpriteSheet = Prometheus::Texture2D::Create("assets/textures/RPGpack_sheet_2X.png");
+
+	m_TextureBush = Prometheus::SubTexture2D::CreateFromCoords(m_SpriteSheet, { 2, 3 }, {1, 1}, {128, 128});
 }
 
 void Sandbox2D::OnDetach()
@@ -39,7 +42,9 @@ void Sandbox2D::OnUpdate(Prometheus::Timestep ts)
 		Prometheus::RenderCommand::Clear();
 	}
 	
+
 	{
+#if 0
 		PM_PROFILE_SCOPE("Renderer Draw");
 		Prometheus::Renderer2D::BeginScene(m_CameraController.GetCamera());
 		Prometheus::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
@@ -57,6 +62,10 @@ void Sandbox2D::OnUpdate(Prometheus::Timestep ts)
 				Prometheus::Renderer2D::DrawQuad({ x, y }, { 0.45f, 0.45f }, color);
 			}
 		}
+		Prometheus::Renderer2D::EndScene();
+#endif
+		Prometheus::Renderer2D::BeginScene(m_CameraController.GetCamera());
+		Prometheus::Renderer2D::DrawQuad({ 0.0f, 0.0f, 0.1f }, { 1.0f, 1.0f }, m_TextureBush);
 		Prometheus::Renderer2D::EndScene();
 	}
 	

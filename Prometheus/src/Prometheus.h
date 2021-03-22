@@ -22,6 +22,7 @@
 #include "Prometheus/Renderer/Buffer.h"
 #include "Prometheus/Renderer/Shader.h"
 #include "Prometheus/Renderer/Texture.h"
+#include "Prometheus/Renderer/SubTexture2D.h"
 #include "Prometheus/Renderer/VertexArray.h"
 
 #include "Prometheus/Renderer/OrthographicCamera.h"

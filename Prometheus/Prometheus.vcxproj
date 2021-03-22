@@ -175,6 +175,7 @@
     <ClInclude Include="src\Prometheus\Renderer\Renderer2D.h" />
     <ClInclude Include="src\Prometheus\Renderer\RendererAPI.h" />
     <ClInclude Include="src\Prometheus\Renderer\Shader.h" />
+    <ClInclude Include="src\Prometheus\Renderer\SubTexture2D.h" />
     <ClInclude Include="src\Prometheus\Renderer\Texture.h" />
     <ClInclude Include="src\Prometheus\Renderer\VertexArray.h" />
     <ClInclude Include="src\pmpch.h" />
@@ -611,6 +612,7 @@
     <ClCompile Include="src\Prometheus\Renderer\Renderer2D.cpp" />
     <ClCompile Include="src\Prometheus\Renderer\RendererAPI.cpp" />
     <ClCompile Include="src\Prometheus\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Prometheus\Renderer\SubTexture2D.cpp" />
     <ClCompile Include="src\Prometheus\Renderer\Texture.cpp" />
     <ClCompile Include="src\Prometheus\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\pmpch.cpp">
