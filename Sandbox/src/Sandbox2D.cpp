@@ -19,6 +19,11 @@ void Sandbox2D::OnAttach()
 	m_SpriteSheet = Prometheus::Texture2D::Create("assets/textures/RPGpack_sheet_2X.png");
 
 	m_TextureBush = Prometheus::SubTexture2D::CreateFromCoords(m_SpriteSheet, { 2, 3 }, {1, 1}, {128, 128});
+
+	Prometheus::FramebufferSpecification fbSpec;
+	fbSpec.Width = 1280;
+	fbSpec.Height = 720;
+	m_Framebuffer = Prometheus::Framebuffer::Create(fbSpec);
 }
 
 void Sandbox2D::OnDetach()
@@ -38,13 +43,13 @@ void Sandbox2D::OnUpdate(Prometheus::Timestep ts)
 	Prometheus::Renderer2D::ResetStats();
 	{
 		PM_PROFILE_SCOPE("Renderer Prep");
+		m_Framebuffer->Bind();
 		Prometheus::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		Prometheus::RenderCommand::Clear();
 	}
 	
 
 	{
-#if 0
 		PM_PROFILE_SCOPE("Renderer Draw");
 		Prometheus::Renderer2D::BeginScene(m_CameraController.GetCamera());
 		Prometheus::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
@@ -63,10 +68,12 @@ void Sandbox2D::OnUpdate(Prometheus::Timestep ts)
 			}
 		}
 		Prometheus::Renderer2D::EndScene();
-#endif
+		m_Framebuffer->Unbind();
+#if 0
 		Prometheus::Renderer2D::BeginScene(m_CameraController.GetCamera());
 		Prometheus::Renderer2D::DrawQuad({ 0.0f, 0.0f, 0.1f }, { 1.0f, 1.0f }, m_TextureBush);
 		Prometheus::Renderer2D::EndScene();
+#endif
 	}
 	
 }
@@ -75,15 +82,68 @@ void Sandbox2D::OnImGuiRender()
 {
 	PM_PROFILE_FUNCTION();
 
+	static bool dockingEnabled = true;
+	if (dockingEnabled)
+	{
+		static bool dockspaceOpen = true;
+		static bool opt_fullscreen_persistant = true;
+		bool opt_fullscreen = opt_fullscreen_persistant;
+		static ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;
+
+		ImGuiWindowFlags window_flags = ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking;
+		if (opt_fullscreen)
+		{
+			ImGuiViewport* viewport = ImGui::GetMainViewport();
+			ImGui::SetNextWindowPos(viewport->Pos);
+			ImGui::SetNextWindowSize(viewport->Size);
+			ImGui::SetNextWindowViewport(viewport->ID);
+			ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
+			ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+			window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove;
+			window_flags |= ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
+		}
+
+		if (dockspace_flags & ImGuiDockNodeFlags_PassthruCentralNode)
+			window_flags |= ImGuiWindowFlags_NoBackground;
+
+		ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
+		ImGui::Begin("Dockspace Demo", &dockspaceOpen, window_flags);
+		ImGui::PopStyleVar();
+
+		if (opt_fullscreen)
+			ImGui::PopStyleVar(2);
+
+		ImGuiIO& io = ImGui::GetIO();
+		if (io.ConfigFlags & ImGuiConfigFlags_DockingEnable)
+		{
+			ImGuiID dockspace_id = ImGui::GetID("MyDockSpace");
+			ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);
+		}
+
+		if (ImGui::BeginMenuBar())
+		{
+			if (ImGui::BeginMenu("File"))
+			{
+				if (ImGui::MenuItem("Exit")) Prometheus::Application::Get().Close();
+				ImGui::EndMenu();
+			}
+		}
+		ImGui::EndMenuBar();
+	}
+
 	ImGui::Begin("Settings");
 	ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
-
 	auto stats = Prometheus::Renderer2D::GetStats();
 	ImGui::Text("Renderer2D Stats:");
 	ImGui::Text("DrawCalls: %d", stats.DrawCalls);
 	ImGui::Text("Quads: %d", stats.QuadCount);
 	ImGui::Text("VertexCount: %d", stats.GetTotalVertexCount());
 	ImGui::Text("IndexCount: %d", stats.GetTotalIndexCount());
+
+	uint32_t textureID = m_Framebuffer->GetColorAttachmentRendererID();
+	ImGui::Image((void*)textureID, ImVec2{ 1280.0f, 720.0f });
+	ImGui::End();
+
 	ImGui::End();
 }
 

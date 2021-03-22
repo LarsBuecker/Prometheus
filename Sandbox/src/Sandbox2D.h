@@ -21,6 +21,7 @@ private:
 	Prometheus::Ref<Prometheus::VertexArray> m_SquareVA;
 	Prometheus::Ref<Prometheus::Shader> m_FlatColorShader;
 	Prometheus::Ref<Prometheus::Texture2D> m_Texture;
+	Prometheus::Ref<Prometheus::Framebuffer> m_Framebuffer;
 	// ----
 
 	Prometheus::Ref<Prometheus::Texture2D> m_CheckerboardTexture;

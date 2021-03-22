@@ -142,6 +142,7 @@
   <ItemGroup>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLFramebuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="src\Prometheus\Events\Event.h" />
     <ClInclude Include="src\Prometheus\Events\KeyEvent.h" />
     <ClInclude Include="src\Prometheus\Events\MouseEvent.h" />
+    <ClInclude Include="src\Prometheus\Renderer\Framebuffer.h" />
     <ClInclude Include="src\Prometheus\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Prometheus\Renderer\Buffer.h" />
     <ClInclude Include="src\Prometheus\Renderer\GraphicsContext.h" />
@@ -592,6 +594,7 @@
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLFramebuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp" />
@@ -605,6 +608,7 @@
     <ClCompile Include="src\Prometheus\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Prometheus\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Prometheus\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Prometheus\Renderer\Framebuffer.cpp" />
     <ClCompile Include="src\Prometheus\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\Prometheus\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Prometheus\Renderer\RenderCommand.cpp" />
