@@ -18,6 +18,7 @@ IncludeDir["Glad"] = "Prometheus/vendor/Glad/include"
 IncludeDir["ImGui"] = "Prometheus/vendor/imgui"
 IncludeDir["glm"] = "Prometheus/vendor/glm"
 IncludeDir["stb_image"] = "Prometheus/vendor/stb_image"
+IncludeDir["entt"] = "Prometheus/vendor/entt/include"
 
 group "Dependencies"
 	include "Prometheus/vendor/GLFW"
@@ -62,7 +63,8 @@ project "Prometheus"
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.stb_image}"
+		"%{IncludeDir.stb_image}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
@@ -121,7 +123,8 @@ project "Sandbox"
 		"Prometheus/src",
 		"Prometheus/vendor",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
@@ -175,7 +178,8 @@ project "Prometheus-Editor"
 		"Prometheus/src",
 		"Prometheus/vendor",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
