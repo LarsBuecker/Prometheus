@@ -17,12 +17,8 @@ public:
 private:
 	Prometheus::OrthographicCameraController m_CameraController;
 
-	// Temp
-	Prometheus::Ref<Prometheus::VertexArray> m_SquareVA;
-	Prometheus::Ref<Prometheus::Shader> m_FlatColorShader;
-	Prometheus::Ref<Prometheus::Texture2D> m_Texture;
 	Prometheus::Ref<Prometheus::Framebuffer> m_Framebuffer;
-	// ----
+	glm::vec2 m_ViewportSize;
 
 	Prometheus::Ref<Prometheus::Texture2D> m_CheckerboardTexture;
 	Prometheus::Ref<Prometheus::Texture2D> m_SpriteSheet;

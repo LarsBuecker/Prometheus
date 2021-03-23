@@ -1,6 +1,6 @@
 workspace "Prometheus"
 	architecture "x64"
-	startproject "Sandbox"
+	startproject "Prometheus-Editor"
 
 	configurations
 	{
