@@ -37,7 +37,8 @@ void EditorLayer::OnUpdate(Prometheus::Timestep ts)
 	PM_PROFILE_FUNCTION();
 
 	// Update
-	m_CameraController.OnUpdate(ts);
+	if(m_ViewportFocused)
+		m_CameraController.OnUpdate(ts);
 
 	// Render
 	Prometheus::Renderer2D::ResetStats();
@@ -49,7 +50,6 @@ void EditorLayer::OnUpdate(Prometheus::Timestep ts)
 	}
 	
 	{
-
 		PM_PROFILE_SCOPE("Renderer Draw");
 		Prometheus::Renderer2D::BeginScene(m_CameraController.GetCamera());
 		Prometheus::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
@@ -143,6 +143,10 @@ void EditorLayer::OnImGuiRender()
 
 	ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 0, 0 });
 	ImGui::Begin("Viewport");
+	m_ViewportFocused = ImGui::IsWindowFocused();
+	m_ViewportHovered = ImGui::IsWindowHovered();
+	Prometheus::Application::Get().GetImGuiLayer()->BlockEvents(!m_ViewportFocused || !m_ViewportHovered);
+
 	ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
 	if (m_ViewportSize != *((glm::vec2*)&viewportPanelSize))
 	{

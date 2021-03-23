@@ -19,6 +19,8 @@ private:
 
 	Prometheus::Ref<Prometheus::Framebuffer> m_Framebuffer;
 	glm::vec2 m_ViewportSize;
+	bool m_ViewportHovered = false;
+	bool m_ViewportFocused = false;
 
 	Prometheus::Ref<Prometheus::Texture2D> m_CheckerboardTexture;
 	Prometheus::Ref<Prometheus::Texture2D> m_SpriteSheet;
