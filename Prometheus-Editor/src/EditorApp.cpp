@@ -8,23 +8,24 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "Sandbox2D.h"
+#include "EditorLayer.h"
 
 
 
-class Sandbox : public Prometheus::Application {
+class EditorApp : public Prometheus::Application {
 public:
-	Sandbox() 
+	EditorApp() 
+		: Application("Prometheus Editor")
 	{
 		// PushLayer(new ExampleLayer());
-		PushLayer(new Sandbox2D());
+		PushLayer(new EditorLayer());
 	}
 
-	~Sandbox() 
+	~EditorApp() 
 	{
 	}
 };
 
 Prometheus::Application* Prometheus::CreateApplication() {
-	return new Sandbox();
+	return new EditorApp();
 }

@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImGui", "Prometheus\vendor\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Prometheus", "Prometheus\Prometheus.vcxproj", "{519E8383-3D56-C5D0-A65D-9E2C923460C1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Prometheus-Editor", "Prometheus-Editor\Prometheus-Editor.vcxproj", "{E5FC97A4-5113-963A-9A8A-215C06E066C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -50,6 +52,12 @@ Global
 		{519E8383-3D56-C5D0-A65D-9E2C923460C1}.Dist|x64.Build.0 = Dist|x64
 		{519E8383-3D56-C5D0-A65D-9E2C923460C1}.Release|x64.ActiveCfg = Release|x64
 		{519E8383-3D56-C5D0-A65D-9E2C923460C1}.Release|x64.Build.0 = Release|x64
+		{E5FC97A4-5113-963A-9A8A-215C06E066C2}.Debug|x64.ActiveCfg = Debug|x64
+		{E5FC97A4-5113-963A-9A8A-215C06E066C2}.Debug|x64.Build.0 = Debug|x64
+		{E5FC97A4-5113-963A-9A8A-215C06E066C2}.Dist|x64.ActiveCfg = Dist|x64
+		{E5FC97A4-5113-963A-9A8A-215C06E066C2}.Dist|x64.Build.0 = Dist|x64
+		{E5FC97A4-5113-963A-9A8A-215C06E066C2}.Release|x64.ActiveCfg = Release|x64
+		{E5FC97A4-5113-963A-9A8A-215C06E066C2}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

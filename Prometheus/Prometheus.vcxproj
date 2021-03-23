@@ -166,9 +166,9 @@
     <ClInclude Include="src\Prometheus\Events\Event.h" />
     <ClInclude Include="src\Prometheus\Events\KeyEvent.h" />
     <ClInclude Include="src\Prometheus\Events\MouseEvent.h" />
-    <ClInclude Include="src\Prometheus\Renderer\Framebuffer.h" />
     <ClInclude Include="src\Prometheus\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Prometheus\Renderer\Buffer.h" />
+    <ClInclude Include="src\Prometheus\Renderer\Framebuffer.h" />
     <ClInclude Include="src\Prometheus\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Prometheus\Renderer\OrthographicCamera.h" />
     <ClInclude Include="src\Prometheus\Renderer\OrthographicCameraController.h" />

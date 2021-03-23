@@ -63,6 +63,9 @@
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLFramebuffer.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
@@ -138,6 +141,9 @@
     <ClInclude Include="src\Prometheus\Renderer\Buffer.h">
       <Filter>src\Prometheus\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Prometheus\Renderer\Framebuffer.h">
+      <Filter>src\Prometheus\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Prometheus\Renderer\GraphicsContext.h">
       <Filter>src\Prometheus\Renderer</Filter>
     </ClInclude>
@@ -160,6 +166,9 @@
       <Filter>src\Prometheus\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Prometheus\Renderer\Shader.h">
+      <Filter>src\Prometheus\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Prometheus\Renderer\SubTexture2D.h">
       <Filter>src\Prometheus\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Prometheus\Renderer\Texture.h">
@@ -1398,15 +1407,15 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Prometheus\Renderer\SubTexture2D.h" />
-    <ClInclude Include="src\Prometheus\Renderer\Framebuffer.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLFramebuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLFramebuffer.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
@@ -1448,6 +1457,9 @@
     <ClCompile Include="src\Prometheus\Renderer\Buffer.cpp">
       <Filter>src\Prometheus\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Prometheus\Renderer\Framebuffer.cpp">
+      <Filter>src\Prometheus\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Prometheus\Renderer\OrthographicCamera.cpp">
       <Filter>src\Prometheus\Renderer</Filter>
     </ClCompile>
@@ -1469,6 +1481,9 @@
     <ClCompile Include="src\Prometheus\Renderer\Shader.cpp">
       <Filter>src\Prometheus\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Prometheus\Renderer\SubTexture2D.cpp">
+      <Filter>src\Prometheus\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Prometheus\Renderer\Texture.cpp">
       <Filter>src\Prometheus\Renderer</Filter>
     </ClCompile>
@@ -1481,8 +1496,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\Prometheus\Renderer\SubTexture2D.cpp" />
-    <ClCompile Include="src\Prometheus\Renderer\Framebuffer.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLFramebuffer.cpp" />
   </ItemGroup>
 </Project>

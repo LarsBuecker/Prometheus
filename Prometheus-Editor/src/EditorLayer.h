@@ -2,11 +2,11 @@
 
 #include "Prometheus.h"
 
-class Sandbox2D : public Prometheus::Layer
+class EditorLayer : public Prometheus::Layer
 {
 public:
-	Sandbox2D();
-	virtual ~Sandbox2D() = default;
+	EditorLayer();
+	virtual ~EditorLayer() = default;
 
 	virtual void OnAttach() override;
 	virtual void OnDetach() override;
@@ -16,6 +16,13 @@ public:
 	void OnEvent(Prometheus::Event& e) override;
 private:
 	Prometheus::OrthographicCameraController m_CameraController;
+
+	// Temp
+	Prometheus::Ref<Prometheus::VertexArray> m_SquareVA;
+	Prometheus::Ref<Prometheus::Shader> m_FlatColorShader;
+	Prometheus::Ref<Prometheus::Texture2D> m_Texture;
+	Prometheus::Ref<Prometheus::Framebuffer> m_Framebuffer;
+	// ----
 
 	Prometheus::Ref<Prometheus::Texture2D> m_CheckerboardTexture;
 	Prometheus::Ref<Prometheus::Texture2D> m_SpriteSheet;
